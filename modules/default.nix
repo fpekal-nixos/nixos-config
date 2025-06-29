@@ -9,5 +9,7 @@
 		./secrets
 		./simple-list.nix
 		./neovim
+		./kill.nix
+		./transmission.nix
 	];
 }

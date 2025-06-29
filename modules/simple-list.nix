@@ -9,11 +9,22 @@
 		tmux
 		appimage-run
 		htop
+		btop
 		ranger
 
 		zip
 		unzip
 		rar
 		unrar
+
+		watchman
+		jujutsu
+		cmake
+		gnumake
+		gnupg
+		gdb
+		uiua
+		sops
+		ffmpeg_7-full
 	];
 }
