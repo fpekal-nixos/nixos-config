@@ -67,6 +67,18 @@
 					}
 				];
 			};
+
+			nixosConfigurations.table = self.systems.table.mksystem {
+				system = "x86_64-linux";
+				specialArgs = { users = [ "filip" ]; };
+
+				modules = [
+					{
+						impurity.enable = false;
+						impurity.configRoot = self;
+					}
+				];
+			};
 		};
 }
 
