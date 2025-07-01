@@ -4,4 +4,11 @@
 		inputs.boomer.packages.x86_64-linux.boomer
 		vesktop
 	];
+
+
+	home-manager.users.filip.programs.boomer = {
+		enableConfig = true;
+
+		min_scale = 1.0;
+	};
 }
