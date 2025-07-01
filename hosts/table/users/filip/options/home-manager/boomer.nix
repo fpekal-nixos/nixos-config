@@ -1,5 +1,5 @@
-{ config, lib }:
-with lib, types; {
+{ config, lib, ... }:
+with lib; with types; {
 	options = {
 		programs.boomer = {
 			enableConfig = mkOption {
@@ -36,10 +36,10 @@ with lib, types; {
 		{
 			home.file = mkIf cfg.enableConfig {
 					".config/boomer/config".text = ''
-						min_scale = ${cfg.min_scale}
-						scroll_speed = ${cfg.scroll_speed}
-						drag_friction = ${cfg.drag_friction}
-						scale_friction = ${cfg.scale_friction}
+						min_scale = ${toString cfg.min_scale}
+						scroll_speed = ${toString cfg.scroll_speed}
+						drag_friction = ${toString cfg.drag_friction}
+						scale_friction = ${toString cfg.scale_friction}
 					'';
 			};
 		};
