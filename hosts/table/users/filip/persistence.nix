@@ -8,11 +8,13 @@
 				".local/share/zoxide"
 				".local/share/PrismLauncher"
 				".zen"
+				".ssh"
 			];
 
 			files = [
 				".config/sops/age/keys.txt"
 				".bash_history"
+				".gitconfig"
 			];
 		};
 	};
