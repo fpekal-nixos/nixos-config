@@ -1,0 +1,7 @@
+{
+	imports = [
+		./steam.nix
+		./persistence.nix
+		./packages.nix
+	];
+}

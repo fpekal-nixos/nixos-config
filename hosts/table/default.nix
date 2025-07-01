@@ -1,8 +1,5 @@
 {
 	imports = [
-		./hardware-configuration.nix
-		./boot.nix
-		./locale.nix
-		./gui.nix
+		./modules ./options ./overlays ./packages ./shells ./users
 	];
 }

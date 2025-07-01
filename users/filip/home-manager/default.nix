@@ -4,5 +4,7 @@
 		./neovim
 		./bash
 		./bitwarden.nix
+		./i3
+		./tilix
 	];
 }

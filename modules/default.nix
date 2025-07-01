@@ -10,6 +10,7 @@
 		./simple-list.nix
 		./neovim
 		./kill.nix
-		./transmission.nix
+		# ./transmission.nix
+		./fonts.nix
 	];
 }

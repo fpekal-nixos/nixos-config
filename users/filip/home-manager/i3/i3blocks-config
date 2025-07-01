@@ -1,0 +1,15 @@
+command=$SCRIPT_DIR/$BLOCK_NAME
+separator_block_width=15
+markup=none
+
+[Amongus]
+full_text= <span size="x-large">ඞ</span> 
+markup=pango
+
+[Clock]
+full_text=Clock
+command=date "+ <span color=\"gray\">%d.%m.%y, %a,</span> %H:%M:%S "
+interval=1
+markup=pango
+
+

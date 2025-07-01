@@ -16,6 +16,21 @@
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/68cd1971-6a24-43c7-806f-8a02a47707c1";
       fsType = "btrfs";
+			options = [ "subvol=@root" ];
+    };
+
+	fileSystems."/persistent" =
+    { device = "/dev/disk/by-uuid/68cd1971-6a24-43c7-806f-8a02a47707c1";
+      fsType = "btrfs";
+			neededForBoot = true;
+			options = [ "subvol=@persistent" ];
+    };
+
+	fileSystems."/nix" =
+    { device = "/dev/disk/by-uuid/68cd1971-6a24-43c7-806f-8a02a47707c1";
+      fsType = "btrfs";
+			neededForBoot = true;
+			options = [ "subvol=@nix" ];
     };
 
   fileSystems."/boot" =
