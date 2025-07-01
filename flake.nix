@@ -19,7 +19,7 @@
 		};
 		impurity.url = "github:outfoxxed/impurity.nix";
 		impermanence.url = "github:nix-community/impermanence";
-		boomer.url = "github:nilp0inter/boomer";
+		boomer.url = "github:fpekal/boomer";
 	};
 
 	outputs =
