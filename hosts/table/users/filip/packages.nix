@@ -10,5 +10,6 @@
 		enableConfig = true;
 
 		min_scale = 1.0;
+		scroll_speed = 0.5;
 	};
 }
