@@ -8,5 +8,6 @@
 		./locale.nix
 		./programs
 		./gui.nix
+		./networking.nix
 	];
 }
