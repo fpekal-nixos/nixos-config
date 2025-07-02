@@ -50,6 +50,11 @@
     jack.enable = true;
   };
 
+	environment.systemPackages = with pkgs; [
+		pulseaudio
+		light
+	];
+
   services.pipewire.extraConfig.pipewire = {
     "crackling" = {
       "context.properties" = {
