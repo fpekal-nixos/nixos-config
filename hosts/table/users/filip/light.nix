@@ -8,6 +8,9 @@
 		};
 	};
 
+	# Enables the use of special keys on the keyboard
+	services.acpid.enable = true;
+
 	home-manager.users.filip = {
 		systemd.user.services.light = {
 			Service = {
