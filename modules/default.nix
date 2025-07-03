@@ -12,5 +12,6 @@
 		./kill.nix
 		# ./transmission.nix
 		./fonts.nix
+		./zellij.nix
 	];
 }
