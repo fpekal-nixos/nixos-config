@@ -6,5 +6,6 @@
 		./persistence.nix
 		./steam.nix
 		./packages.nix
+		./zellij.nix
 	];
 }
