@@ -5,5 +5,6 @@
 		./packages.nix
 		./options
 		./light.nix
+		./modules
 	];
 }
