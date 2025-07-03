@@ -1,7 +1,8 @@
 { pkgs, config, ... }:
 {
   config = {
-		services.xserver.videoDrivers = [ "nvidia" ];
+		# SET IN POWER-SAVING!!!
+		# services.xserver.videoDrivers = [ "nvidia" ];
 
     hardware.graphics = {
       enable = true;

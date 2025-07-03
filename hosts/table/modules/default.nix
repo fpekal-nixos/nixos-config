@@ -11,5 +11,6 @@
 		./networking.nix
 		./wallpapers
 		./bluetooth.nix
+		./specialisations.nix
 	];
 }
