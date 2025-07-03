@@ -6,7 +6,6 @@
 				".local/state/nvim"
 				".local/share/nvim"
 				".local/share/zoxide"
-				".local/share/PrismLauncher"
 				".zen"
 				".ssh"
 			];
