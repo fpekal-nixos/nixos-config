@@ -10,5 +10,6 @@
 		./gui.nix
 		./networking.nix
 		./wallpapers
+		./bluetooth.nix
 	];
 }
