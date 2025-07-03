@@ -33,9 +33,9 @@
       enable = true;
       greeters.slick = {
         enable = true;
-        extraConfig = ''
-                background=/var/lock_screen/lock_screen.png
-        '';
+				# extraConfig = ''
+        #         background=/var/lock_screen/lock_screen.png
+        # '';
       };
     };
 
