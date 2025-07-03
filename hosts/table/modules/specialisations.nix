@@ -1,5 +1,7 @@
 {
 	specialisation.NoGPU = {
-		hardware.power-saving = true;
+		configuration = {
+			hardware.power_saving = true;
+		};
 	};
 }
