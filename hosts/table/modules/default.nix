@@ -9,5 +9,6 @@
 		./programs
 		./gui.nix
 		./networking.nix
+		./wallpapers
 	];
 }

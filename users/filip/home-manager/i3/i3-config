@@ -238,4 +238,4 @@ bar {
 
 }
 
-exec --no-startup-id nitrogen --set-auto /home/filip/wallpapers/chiaki.png
+exec --no-startup-id nitrogen --set-auto /home/filip/.wallpapers/chiaki.png
