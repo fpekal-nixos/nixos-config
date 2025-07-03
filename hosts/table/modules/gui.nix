@@ -3,13 +3,16 @@
   services.libinput.touchpad.naturalScrolling = true;
   services.libinput.mouse.accelProfile = "flat";
 
+	services.libinput = {
+		enable = true;
+	};
+
+	services.displayManager.defaultSession = "none+i3";
+
   services.xserver = {
     enable = true;
     enableTCP = true;
 
-		libinput = {
-			enable = true;
-		};
 
     windowManager.i3 = {
       enable = true;
@@ -38,8 +41,6 @@
         # '';
       };
     };
-
-		displayManager.defaultSession = "none+i3";
   };
 
   services.pipewire = {
