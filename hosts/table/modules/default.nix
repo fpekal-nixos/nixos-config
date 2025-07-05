@@ -13,5 +13,6 @@
 		./bluetooth.nix
 		./specialisations.nix
 		./ssh.nix
+		./hosts.nix
 	];
 }
