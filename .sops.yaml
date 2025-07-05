@@ -2,7 +2,7 @@ keys:
   - &everest age108hrd2jmtasgr3l5t3r90hs9uwnafp95l3xpsz7hdmtsj2x4535swwfy8u
   - &table age1kqf93nh503ezgwcc0trfatn4pgr7wnf3z73vlmyxk5tuj629fcvq2nrg46
 creation_rules:
-  - path_regex: generic/modules/secrets/secrets.yaml$
+  - path_regex: modules/secrets/secrets.yaml$
     key_groups:
     - age:
       - *everest

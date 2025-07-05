@@ -13,5 +13,6 @@
 		# ./transmission.nix
 		./fonts.nix
 		./zellij.nix
+		./tailscale.nix
 	];
 }
