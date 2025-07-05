@@ -15,6 +15,7 @@
 			"/var/lib/nixos"
 			"/var/lib/bluetooth"
 			"/var/lib/systemd/coredump"
+			"/var/db/sudo/lectured"
 			"/etc/NetworkManager/system-connections"
 		];
 		files = [
