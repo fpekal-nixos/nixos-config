@@ -7,5 +7,6 @@
 		./steam.nix
 		./packages.nix
 		./zellij.nix
+		./radioboat
 	];
 }
