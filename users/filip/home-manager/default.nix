@@ -5,5 +5,6 @@
 		./bash
 		./bitwarden.nix
 		./tilix
+		./jj
 	];
 }
