@@ -10,4 +10,12 @@
 			file.".config/mpv/mpv.conf".source = ./mpv.conf;
 		};
 	};
+
+	environment.persistence."/persistent" = {
+		users.filip = {
+			files = [
+				".tracks"
+			];
+		};
+	};
 }
