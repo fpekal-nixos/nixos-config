@@ -54,6 +54,7 @@
 	environment.systemPackages = with pkgs; [
 		pulseaudio
 		light
+		xclip
 	];
 
   services.pipewire.extraConfig.pipewire = {
