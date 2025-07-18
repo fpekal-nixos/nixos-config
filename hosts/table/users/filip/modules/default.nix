@@ -8,5 +8,6 @@
 		./packages.nix
 		./zellij.nix
 		./radioboat
+		./radiod
 	];
 }

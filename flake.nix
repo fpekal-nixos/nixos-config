@@ -20,6 +20,9 @@
 		impurity.url = "github:outfoxxed/impurity.nix";
 		impermanence.url = "github:nix-community/impermanence";
 		boomer.url = "github:fpekal/boomer";
+
+		radiod.url = "github:fpekal/radiod";
+		radiod.inputs.nixpkgs.follows = "nixpkgs";
 	};
 
 	outputs =
