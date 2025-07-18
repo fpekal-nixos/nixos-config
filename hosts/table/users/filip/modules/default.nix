@@ -9,5 +9,6 @@
 		./zellij.nix
 		./radioboat
 		./radiod
+		./obsidian.nix
 	];
 }
