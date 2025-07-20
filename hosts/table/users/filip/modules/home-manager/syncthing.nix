@@ -6,10 +6,18 @@
 			overrideDevices = true;
 			overrideFolders = true;
 
-			settings.options = {
-				localAnnounceEnabled = true;
-				relaysEnabled = true;
-				urAccepted = -1;
+			settings = {
+				options = {
+					localAnnounceEnabled = true;
+					relaysEnabled = true;
+					urAccepted = -1;
+				};
+
+				devices = {
+					"everest" = {
+						id = "JJXFRYP-2DFMLYX-S3PVLVA-B2I737G-RX3K4MK-JRKQRBI-HBVEURV-LCJUUAH";
+					};
+				};
 			};
 		};
 	};
