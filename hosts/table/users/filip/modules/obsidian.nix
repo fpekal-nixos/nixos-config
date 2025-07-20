@@ -9,7 +9,18 @@
 		};
 	};
 
-	home-manager.users.filip.home.packages = [
-		pkgs.obsidian
-	];
+	home-manager.users.filip = {
+		services.syncthing.settings.folders = {
+			"Kontener" = {
+				id = "kontener";
+				label = "Kontener";
+				path = "~/Kontener";
+				devices = [ "everest" ];
+			};
+		};
+
+		home.packages = [
+			pkgs.obsidian
+		];
+	};
 }
