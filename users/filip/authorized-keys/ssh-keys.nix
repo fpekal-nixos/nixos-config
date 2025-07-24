@@ -10,4 +10,8 @@
 	samsungA71 = {
 		publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKTi7zEUwhc7yJBpBbCUR/6XadBt5s/CjPhsWWBsTeDU";
 	};
+
+	samsungS23plus = {
+		publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHnZDyf7RQUAamCz0cA7LYA94PrAltBDtZoZwYLcOIoU";
+	};
 }
