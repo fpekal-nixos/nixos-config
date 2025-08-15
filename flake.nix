@@ -22,7 +22,9 @@
     boomer.url = "github:fpekal/boomer";
 
     radiod.url = "github:fpekal/radiod";
-    radiod.inputs.nixpkgs.follows = "nixpkgs";
+
+    fairfax-nerdfont.url = "github:fpekal-nixos/FairfaxNerdfont";
+    fairfax-nerdfont.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =

@@ -19,6 +19,26 @@
         "type": "github"
       }
     },
+    "fairfax-nerdfont": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1755174332,
+        "narHash": "sha256-FPi23zJy0mtSFBJ2iyf0h7gJO5g6VUsjev+RT7diJec=",
+        "owner": "fpekal-nixos",
+        "repo": "FairfaxNerdfont",
+        "rev": "a5140f663f446d57b29fe59f589be6c3f9bb4b1b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "fpekal-nixos",
+        "repo": "FairfaxNerdfont",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -157,11 +177,25 @@
         "type": "github"
       }
     },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1755027561,
+        "narHash": "sha256-IVft239Bc8p8Dtvf7UAACMG5P3ZV+3/aO28gXpGtMXI=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "005433b926e16227259a1843015b5b2b7f7d1fc3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "radiod": {
       "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
+        "nixpkgs": "nixpkgs_3"
       },
       "locked": {
         "lastModified": 1752140686,
@@ -180,6 +214,7 @@
     "root": {
       "inputs": {
         "boomer": "boomer",
+        "fairfax-nerdfont": "fairfax-nerdfont",
         "home-manager": "home-manager",
         "impermanence": "impermanence",
         "impurity": "impurity",
