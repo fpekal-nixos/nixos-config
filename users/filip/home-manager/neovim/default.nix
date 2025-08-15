@@ -1,4 +1,6 @@
 { impurity, ... }: {
+  imports = [ ./neovide.nix ];
+
   home-manager.users.filip = {
     home.file.".config/nvim" = {
       source = impurity.link ./nvim-config;
