@@ -1,20 +1,21 @@
-{ pkgs, ... }:
-{
-	programs.neovim = {
-		enable = true;
-		defaultEditor = true;
+{ pkgs, ... }: {
+  environment.systemPackages = with pkgs; [ fd ripgrep ];
 
-		# runtime = {
-		# 	# "lua".source = ./lua;
-		# };
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
 
-		# configure = {
-		# 	customRC = "lua require(\"init\")";
-		# 	packages = with pkgs.vimPlugins; {
-		# 		colors = {
-		# 			start = [ catppuccin-nvim ];
-		# 		};
-		# 	};
-		# };
-	};
+    # runtime = {
+    # 	# "lua".source = ./lua;
+    # };
+
+    # configure = {
+    # 	customRC = "lua require(\"init\")";
+    # 	packages = with pkgs.vimPlugins; {
+    # 		colors = {
+    # 			start = [ catppuccin-nvim ];
+    # 		};
+    # 	};
+    # };
+  };
 }
