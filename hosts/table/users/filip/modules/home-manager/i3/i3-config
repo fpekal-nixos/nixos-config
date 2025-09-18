@@ -38,10 +38,15 @@ exec --no-startup-id nm-applet
 
 # Radio
 exec --no-startup-id radiod daemon
-bindsym $mod+F9 exec --no-startup-id radiod next
-bindsym $mod+F10 exec --no-startup-id radiod down
-bindsym $mod+F11 exec --no-startup-id radiod toggle
-bindsym $mod+F12 exec --no-startup-id radiod up
+bindsym $mod+Control+minus exec --no-startup-id radiod down
+bindsym $mod+Control+equal exec --no-startup-id radiod up
+
+bindsym $mod+Control+Shift+minus exec --no-startup-id radiod toggle
+bindsym $mod+Control+Shift+equal exec --no-startup-id radiod next
+
+# Volume on 60% keyboard
+bindsym $mod+minus exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2% && $refresh_i3status
+bindsym $mod+equal exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2% && $refresh_i3status
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
