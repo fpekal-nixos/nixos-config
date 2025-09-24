@@ -1,14 +1,14 @@
 { pkgs, ... }:
 {
-	environment.systemPackages = [
-		pkgs.prismlauncher
-	];
+  environment.systemPackages = [
+    pkgs.prismlauncher
+  ];
 
-	environment.persistence."/persistent" = {
-		users.filip = {
-			directories = [
-				".local/share/PrismLauncher"
-			];
-		};
-	};
+  environment.persistence."/persistent" = {
+    users.filip = {
+      directories = [
+        ".local/share/PrismLauncher"
+      ];
+    };
+  };
 }

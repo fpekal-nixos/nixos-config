@@ -1,4 +1,12 @@
-{ spotify, stdenv, rustPlatform, fetchFromGitHub, xorg, zip, unzip, }:
+{
+  spotify,
+  stdenv,
+  rustPlatform,
+  fetchFromGitHub,
+  xorg,
+  zip,
+  unzip,
+}:
 let
   spotify-adblock = rustPlatform.buildRustPackage {
     pname = "spotify-adblock";
@@ -39,8 +47,12 @@ let
     buildInputs = [ xorg.libX11 ];
     installPhase = "mv spotifywm.so $out";
   };
-in spotify.overrideAttrs (old: {
-  buildInputs = (old.buildInputs or [ ]) ++ [ zip unzip ];
+in
+spotify.overrideAttrs (old: {
+  buildInputs = (old.buildInputs or [ ]) ++ [
+    zip
+    unzip
+  ];
   postInstall = (old.postInstall or "") + ''
     ln -s ${spotify-adblock}/lib/libspotifyadblock.so $libdir
     sed -i "s:^Name=Spotify.*:Name=Spotify-adblock:" "$out/share/spotify/spotify.desktop"

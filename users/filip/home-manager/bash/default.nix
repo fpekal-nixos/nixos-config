@@ -1,18 +1,21 @@
 {
-	home-manager.users.filip = {
-		home.stateVersion = "25.05";
+  home-manager.users.filip = {
+    home.stateVersion = "25.05";
 
-		programs = {
-			zoxide = {
-				enable = true;
-				enableBashIntegration = true;
-				options = [ "--cmd" "cd" ];
-			};
+    programs = {
+      zoxide = {
+        enable = true;
+        enableBashIntegration = true;
+        options = [
+          "--cmd"
+          "cd"
+        ];
+      };
 
-			bash.enable = true;
+      bash.enable = true;
 
-			# Prompt
-			bash.initExtra = builtins.readFile ./PS1.sh;
-		};
-	};
+      # Prompt
+      bash.initExtra = builtins.readFile ./PS1.sh;
+    };
+  };
 }

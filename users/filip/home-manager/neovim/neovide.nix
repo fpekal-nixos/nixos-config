@@ -5,15 +5,23 @@
 
       settings = {
         font = {
-          normal = [{
-            family = "FairfaxHax Nerd Font";
-            style = "Regular";
-          }];
+          normal = [
+            {
+              family = "FairfaxHax Nerd Font";
+              style = "Regular";
+            }
+          ];
           size = 19.0;
 
           features = {
-            "FairfaxHax Nerd Font" =
-              [ "+liga" "+clig" "+dlig" "+hlig" "+ccmp" "+rlig" ];
+            "FairfaxHax Nerd Font" = [
+              "+liga"
+              "+clig"
+              "+dlig"
+              "+hlig"
+              "+ccmp"
+              "+rlig"
+            ];
           };
         };
       };

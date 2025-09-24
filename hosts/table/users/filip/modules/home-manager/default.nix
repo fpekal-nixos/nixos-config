@@ -1,7 +1,7 @@
 {
-	imports = [
-		./wallpapers
-		./i3
-		./syncthing.nix
-	];
+  imports = [
+    ./wallpapers
+    ./i3
+    ./syncthing.nix
+  ];
 }

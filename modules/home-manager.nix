@@ -1,4 +1,4 @@
 {
-	home-manager.useUserPackages = true;
-	home-manager.backupFileExtension = "backup";
+  home-manager.useUserPackages = true;
+  home-manager.backupFileExtension = "backup";
 }

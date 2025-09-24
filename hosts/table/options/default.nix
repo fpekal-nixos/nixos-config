@@ -1,5 +1,5 @@
 {
-	imports = [
-		./power-saving.nix
-	];
+  imports = [
+    ./power-saving.nix
+  ];
 }

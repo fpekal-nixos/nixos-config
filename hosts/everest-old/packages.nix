@@ -1,9 +1,8 @@
 { pkgs, ... }:
 {
-	environment.systemPackages = with pkgs; [
-		jdk23
-	];
+  environment.systemPackages = with pkgs; [
+    jdk23
+  ];
 
-
-	programs.steam.enable = true;
+  programs.steam.enable = true;
 }

@@ -1,5 +1,5 @@
 {
-	home-manager.users.filip.imports = [
-		./boomer.nix
-	];
+  home-manager.users.filip.imports = [
+    ./boomer.nix
+  ];
 }
