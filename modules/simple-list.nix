@@ -26,5 +26,7 @@
     uiua
     sops
     ffmpeg_7-full
+
+    (pkgs.callPackage ../packages/bc-with-libs/default.nix { })
   ];
 }
