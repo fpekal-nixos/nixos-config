@@ -9,6 +9,7 @@
         ".zen"
         ".ssh"
         "Games"
+        ".local/share/osu"
       ];
 
       files = [ ".config/sops/age/keys.txt" ".bash_history" ".gitconfig" ];
