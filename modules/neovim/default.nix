@@ -1,5 +1,9 @@
-{ pkgs, ... }: {
-  environment.systemPackages = with pkgs; [ fd ripgrep ];
+{ pkgs, ... }:
+{
+  environment.systemPackages = with pkgs; [
+    fd
+    ripgrep
+  ];
 
   programs.neovim = {
     enable = true;

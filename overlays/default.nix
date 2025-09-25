@@ -1,5 +1,5 @@
 {
-	imports = [
-		./ranger.nix
-	];
+  imports = [
+    ./ranger.nix
+  ];
 }

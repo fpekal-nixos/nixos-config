@@ -1,7 +1,6 @@
 {
-	services.xserver.displayManager.lightdm.greeters.slick.extraConfig = ''
-		background=${./images/lock_screen.png}
-	'';
-
+  services.xserver.displayManager.lightdm.greeters.slick.extraConfig = ''
+    		background=${./images/lock_screen.png}
+    	'';
 
 }

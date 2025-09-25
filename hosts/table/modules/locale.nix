@@ -20,7 +20,7 @@
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "pl";
-		variant = "";
+    variant = "";
   };
 
   # Configure console keymap

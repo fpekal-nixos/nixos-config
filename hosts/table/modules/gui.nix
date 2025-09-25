@@ -3,16 +3,15 @@
   services.libinput.touchpad.naturalScrolling = true;
   services.libinput.mouse.accelProfile = "flat";
 
-	services.libinput = {
-		enable = true;
-	};
+  services.libinput = {
+    enable = true;
+  };
 
-	services.displayManager.defaultSession = "none+i3";
+  services.displayManager.defaultSession = "none+i3";
 
   services.xserver = {
     enable = true;
     enableTCP = true;
-
 
     windowManager.i3 = {
       enable = true;
@@ -36,7 +35,7 @@
       enable = true;
       greeters.slick = {
         enable = true;
-				# extraConfig = ''
+        # extraConfig = ''
         #         background=/var/lock_screen/lock_screen.png
         # '';
       };
@@ -51,11 +50,11 @@
     jack.enable = true;
   };
 
-	environment.systemPackages = with pkgs; [
-		pulseaudio
-		light
-		xclip
-	];
+  environment.systemPackages = with pkgs; [
+    pulseaudio
+    light
+    xclip
+  ];
 
   services.pipewire.extraConfig.pipewire = {
     "crackling" = {
@@ -69,7 +68,7 @@
   };
 
   services.picom = {
-      enable = true;
+    enable = true;
   };
 
   programs.dconf.profiles = {

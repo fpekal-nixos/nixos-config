@@ -1,9 +1,9 @@
 {
-	environment.persistence."/persistent" = {
-		users.filip = {
-			directories = [
-				".config/zellij"
-			];
-		};
-	};
+  environment.persistence."/persistent" = {
+    users.filip = {
+      directories = [
+        ".config/zellij"
+      ];
+    };
+  };
 }

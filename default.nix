@@ -1,5 +1,11 @@
 {
-	imports = [
-		./modules ./overlays ./packages ./users ./hosts ./shells ./options
-	];
+  imports = [
+    ./modules
+    ./overlays
+    ./packages
+    ./users
+    ./hosts
+    ./shells
+    ./options
+  ];
 }

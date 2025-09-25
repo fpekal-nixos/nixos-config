@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
-	environment.systemPackages = with pkgs; [
-		sunshine
-	];
+  environment.systemPackages = with pkgs; [
+    sunshine
+  ];
 
-	hardware.uinput.enable = true;
+  hardware.uinput.enable = true;
 }

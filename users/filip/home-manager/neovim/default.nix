@@ -1,4 +1,5 @@
-{ impurity, ... }: {
+{ impurity, ... }:
+{
   imports = [ ./neovide.nix ];
 
   home-manager.users.filip = {

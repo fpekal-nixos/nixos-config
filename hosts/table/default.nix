@@ -1,7 +1,12 @@
 {
-	imports = [
-		./modules ./options ./overlays ./packages ./shells ./users
-	];
+  imports = [
+    ./modules
+    ./options
+    ./overlays
+    ./packages
+    ./shells
+    ./users
+  ];
 
-	networking.hostName = "table";
+  networking.hostName = "table";
 }

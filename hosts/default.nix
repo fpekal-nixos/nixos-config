@@ -1,6 +1,6 @@
 { host, ... }:
 {
-	imports = [
-		./${host}
-	];
+  imports = [
+    ./${host}
+  ];
 }
