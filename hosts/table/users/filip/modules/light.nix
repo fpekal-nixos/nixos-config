@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   environment.persistence."/persistent" = {
     users.filip = {
       directories = [
@@ -18,7 +17,7 @@
       };
 
       Install = {
-        WantedBy = [ "default.target" ];
+        WantedBy = ["default.target"];
       };
     };
   };

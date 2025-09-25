@@ -1,7 +1,7 @@
 {
   services.mosquitto = {
     enable = true;
-    logType = [ "all" ];
+    logType = ["all"];
     listeners = [
       {
         users = {
@@ -12,7 +12,6 @@
               "readwrite #"
             ];
           };
-
         };
 
         acl = [

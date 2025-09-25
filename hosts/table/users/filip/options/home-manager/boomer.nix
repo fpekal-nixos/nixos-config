@@ -1,7 +1,10 @@
-{ config, lib, ... }:
-with lib;
-with types;
 {
+  config,
+  lib,
+  ...
+}:
+with lib;
+with types; {
   options = {
     programs.boomer = {
       enableConfig = mkOption {
@@ -31,18 +34,16 @@ with types;
     };
   };
 
-  config =
-    let
-      cfg = config.programs.boomer;
-    in
-    {
-      home.file = mkIf cfg.enableConfig {
-        ".config/boomer/config".text = ''
-          						min_scale = ${toString cfg.min_scale}
-          						scroll_speed = ${toString cfg.scroll_speed}
-          						drag_friction = ${toString cfg.drag_friction}
-          						scale_friction = ${toString cfg.scale_friction}
-          					'';
-      };
+  config = let
+    cfg = config.programs.boomer;
+  in {
+    home.file = mkIf cfg.enableConfig {
+      ".config/boomer/config".text = ''
+        min_scale = ${toString cfg.min_scale}
+        scroll_speed = ${toString cfg.scroll_speed}
+        drag_friction = ${toString cfg.drag_friction}
+        scale_friction = ${toString cfg.scale_friction}
+      '';
     };
+  };
 }

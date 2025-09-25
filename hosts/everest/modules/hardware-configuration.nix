@@ -7,9 +7,7 @@
   pkgs,
   modulesPath,
   ...
-}:
-
-{
+}: {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
@@ -34,9 +32,9 @@
     "kvm-intel"
     "uinput"
   ];
-  boot.kernelParams = [ "nvidia-drm.fbdev=1" ];
+  boot.kernelParams = ["nvidia-drm.fbdev=1"];
   #boot.blacklistedKernelModules = ["nouveau" "nvidiafb"];
-  boot.extraModulePackages = [ ];
+  boot.extraModulePackages = [];
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/1f80ba96-ad6d-4c68-86c2-83d4d9734e30";
@@ -48,7 +46,7 @@
   };
 
   swapDevices = [
-    { device = "/dev/disk/by-uuid/add67558-a735-4723-96ba-ea5e54856ecd"; }
+    {device = "/dev/disk/by-uuid/add67558-a735-4723-96ba-ea5e54856ecd";}
   ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

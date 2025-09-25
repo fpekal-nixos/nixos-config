@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   home-manager.users.filip = {
     home = {
       packages = [

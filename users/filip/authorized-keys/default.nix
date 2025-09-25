@@ -1,6 +1,5 @@
 let
   authorizedKeysList = map (x: x.publicKey) (builtins.attrValues (import ./ssh-keys.nix));
-in
-{
+in {
   users.users.filip.openssh.authorizedKeys.keys = authorizedKeysList;
 }

@@ -1,4 +1,3 @@
-{ users, ... }:
-{
-  imports = (builtins.map (username: ./${username}) users);
+{users, ...}: {
+  imports = builtins.map (username: ./${username}) users;
 }

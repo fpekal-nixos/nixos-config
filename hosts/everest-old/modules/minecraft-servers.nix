@@ -4,8 +4,7 @@
   options,
   lib,
   ...
-}:
-{
+}: {
   options.service.minecraft-servers = {
     enable = lib.mkOption {
       description = "Enable Minecraft servers";
@@ -30,7 +29,7 @@
 
     servers = lib.mkOption {
       description = "List of servers";
-      default = [ ];
+      default = [];
       example = [
         {
           name = "example";
@@ -62,69 +61,77 @@
     };
   };
 
-  config =
-    let
-      cfg = config.service.minecraft-servers;
+  config = let
+    cfg = config.service.minecraft-servers;
 
-      makeServerService = serverConfig: {
-        enable = true;
-        restartIfChanged = true;
-        stopIfChanged = true;
-        wantedBy = if serverConfig.enable then [ "multi-user.target" ] else [ ];
-        serviceConfig = {
-          User = "minecraft-servers";
-          Group = "minecraft-servers";
-        };
-
-        script = ''
-          				cd ${serverConfig.directory}
-          				${serverConfig.java-package or pkgs.zulu}/bin/java ${serverConfig.additional-arguments or ""} ${
-                if (serverConfig ? jar-file) then ("-jar " + serverConfig.jar-file) else ""
-              } --port ${toString serverConfig.port} --nogui ${
-                if (serverConfig ? worldname) then ("--world " + serverConfig.worldname) else ""
-              }
-          			'';
+    makeServerService = serverConfig: {
+      enable = true;
+      restartIfChanged = true;
+      stopIfChanged = true;
+      wantedBy =
+        if serverConfig.enable
+        then ["multi-user.target"]
+        else [];
+      serviceConfig = {
+        User = "minecraft-servers";
+        Group = "minecraft-servers";
       };
 
-      configurePorts = (
-        servers: nextPort:
-        if servers == [ ] then
-          [ ]
+      script = ''
+        cd ${serverConfig.directory}
+        ${serverConfig.java-package or pkgs.zulu}/bin/java ${serverConfig.additional-arguments or ""} ${
+          if (serverConfig ? jar-file)
+          then ("-jar " + serverConfig.jar-file)
+          else ""
+        } --port ${toString serverConfig.port} --nogui ${
+          if (serverConfig ? worldname)
+          then ("--world " + serverConfig.worldname)
+          else ""
+        }
+      '';
+    };
+
+    configurePorts = (
+      servers: nextPort:
+        if servers == []
+        then []
         else
           (
             let
               current = builtins.head servers;
             in
-            [
-              (
-                current
-                // {
-                  port = current.port or nextPort;
-                }
-              )
-            ]
-            ++ (configurePorts (builtins.tail servers) (nextPort + 1))
+              [
+                (
+                  current
+                  // {
+                    port = current.port or nextPort;
+                  }
+                )
+              ]
+              ++ (configurePorts (builtins.tail servers) (nextPort + 1))
           )
-      );
+    );
 
-      configuredPorts = configurePorts cfg.servers cfg.starting-port;
-
-    in
+    configuredPorts = configurePorts cfg.servers cfg.starting-port;
+  in
     lib.mkIf cfg.enable {
       service.gate-minecraft = lib.mkIf cfg.enable-gate {
         enable = true;
 
-        servers = builtins.map (srv: {
-          host = "'" + (srv.hostname or srv.name) + cfg.hostname-suffix + "'";
-          backend = "localhost:" + (toString srv.port);
-        }) configuredPorts;
+        servers =
+          builtins.map (srv: {
+            host = "'" + (srv.hostname or srv.name) + cfg.hostname-suffix + "'";
+            backend = "localhost:" + (toString srv.port);
+          })
+          configuredPorts;
       };
 
       systemd.services = builtins.listToAttrs (
         builtins.map (n: {
           name = "minecraft-server-" + n.name;
           value = makeServerService n;
-        }) configuredPorts
+        })
+        configuredPorts
       );
 
       users.users.minecraft-servers = {
@@ -132,6 +139,6 @@
         group = "minecraft-servers";
       };
 
-      users.groups.minecraft-servers = { };
+      users.groups.minecraft-servers = {};
     };
 }

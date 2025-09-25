@@ -1,5 +1,8 @@
-{ pkgs, inputs, ... }:
 {
+  pkgs,
+  inputs,
+  ...
+}: {
   home-manager.users.filip.home.packages = with pkgs; [
     htop
     zip

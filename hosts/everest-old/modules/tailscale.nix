@@ -1,5 +1,4 @@
-{ config, ... }:
-{
+{config, ...}: {
   services.tailscale = {
     enable = true;
     authKeyFile = config.sops.secrets."vpn/tailscale/tmp-key".path;

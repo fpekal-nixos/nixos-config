@@ -27,75 +27,73 @@
     fairfax-nerdfont.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs =
-    {
-      self,
-      nixosBlankSystem,
-      home-manager,
-      sops-nix,
-      impurity,
-      ...
-    }@inputs:
-    {
-      systems.generic = nixosBlankSystem.systems.minimal.extend {
-        modules = [
-          ./default.nix
-          home-manager.nixosModules.home-manager
-          sops-nix.nixosModules.sops
+  outputs = {
+    self,
+    nixosBlankSystem,
+    home-manager,
+    sops-nix,
+    impurity,
+    ...
+  } @ inputs: {
+    systems.generic = nixosBlankSystem.systems.minimal.extend {
+      modules = [
+        ./default.nix
+        home-manager.nixosModules.home-manager
+        sops-nix.nixosModules.sops
 
-          { imports = [ impurity.nixosModules.impurity ]; }
-        ];
+        {imports = [impurity.nixosModules.impurity];}
+      ];
 
-        specialArgs = { inherit inputs; };
-      };
+      specialArgs = {inherit inputs;};
+    };
 
-      systems.everest = self.systems.generic.extend {
-        specialArgs = {
-          host = "everest";
-        };
-      };
-
-      systems.table = self.systems.generic.extend {
-        specialArgs = {
-          host = "table";
-        };
-      };
-
-      nixosConfigurations.everest = self.systems.everest.mksystem {
-        system = "x86_64-linux";
-        specialArgs = {
-          users = [ "filip" ];
-        };
-
-        modules = [
-          {
-            impurity.enable = false;
-            impurity.configRoot = self;
-
-            virtualisation.vmVariant.virtualisation = {
-              sharedDirectories = {
-                nixos-config = {
-                  source = "/home/filip/dev/nix/configuration";
-                  target = "/home/filip/dev/nix/configuration";
-                };
-              };
-            };
-          }
-        ];
-      };
-
-      nixosConfigurations.table = self.systems.table.mksystem {
-        system = "x86_64-linux";
-        specialArgs = {
-          users = [ "filip" ];
-        };
-
-        modules = [
-          {
-            impurity.enable = false;
-            impurity.configRoot = self;
-          }
-        ];
+    systems.everest = self.systems.generic.extend {
+      specialArgs = {
+        host = "everest";
       };
     };
+
+    systems.table = self.systems.generic.extend {
+      specialArgs = {
+        host = "table";
+      };
+    };
+
+    nixosConfigurations.everest = self.systems.everest.mksystem {
+      system = "x86_64-linux";
+      specialArgs = {
+        users = ["filip"];
+      };
+
+      modules = [
+        {
+          impurity.enable = false;
+          impurity.configRoot = self;
+
+          virtualisation.vmVariant.virtualisation = {
+            sharedDirectories = {
+              nixos-config = {
+                source = "/home/filip/dev/nix/configuration";
+                target = "/home/filip/dev/nix/configuration";
+              };
+            };
+          };
+        }
+      ];
+    };
+
+    nixosConfigurations.table = self.systems.table.mksystem {
+      system = "x86_64-linux";
+      specialArgs = {
+        users = ["filip"];
+      };
+
+      modules = [
+        {
+          impurity.enable = false;
+          impurity.configRoot = self;
+        }
+      ];
+    };
+  };
 }

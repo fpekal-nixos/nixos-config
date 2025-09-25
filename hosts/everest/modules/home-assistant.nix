@@ -1,12 +1,9 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   services.home-assistant = {
     enable = true;
-    extraPackages =
-      python3Packages:
+    extraPackages = python3Packages:
       with pkgs;
-      with python3Packages;
-      [
+      with python3Packages; [
         gtts
         radios
         pysyncthru

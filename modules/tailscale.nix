@@ -1,10 +1,12 @@
-{ host, config, ... }:
-let
+{
+  host,
+  config,
+  ...
+}: let
   prefix = "vpn/tailscale/";
   key = "${prefix}${host}-key";
   keyFile = config.sops.secrets.${key}.path;
-in
-{
+in {
   services.tailscale = {
     enable = true;
 
@@ -16,10 +18,10 @@ in
     ];
   };
 
-  sops.secrets.${key} = { };
+  sops.secrets.${key} = {};
 
   systemd.services.tailscaled-autoconnect = {
-    after = [ "network-online.target" ];
-    wants = [ "network-online.target" ];
+    after = ["network-online.target"];
+    wants = ["network-online.target"];
   };
 }

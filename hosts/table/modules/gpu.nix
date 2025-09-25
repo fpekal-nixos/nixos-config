@@ -1,5 +1,8 @@
-{ pkgs, config, ... }:
 {
+  pkgs,
+  config,
+  ...
+}: {
   config = {
     # SET IN POWER-SAVING!!!
     # services.xserver.videoDrivers = [ "nvidia" ];

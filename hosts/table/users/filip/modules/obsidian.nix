@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   environment.persistence."/persistent" = {
     users.filip = {
       directories = [
@@ -15,7 +14,7 @@
         id = "kontener";
         label = "Kontener";
         path = "~/Kontener";
-        devices = [ "everest" ];
+        devices = ["everest"];
       };
     };
 

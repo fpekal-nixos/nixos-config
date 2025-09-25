@@ -1,6 +1,10 @@
-{ pkgs ? import <nixpkgs> { }, stdenv ? pkgs.stdenv, bc ? pkgs.bc
-, makeWrapper ? pkgs.makeWrapper, lib ? pkgs.lib }:
-
+{
+  pkgs ? import <nixpkgs> {},
+  stdenv ? pkgs.stdenv,
+  bc ? pkgs.bc,
+  makeWrapper ? pkgs.makeWrapper,
+  lib ? pkgs.lib,
+}:
 stdenv.mkDerivation (finalAttrs: {
   pname = "bc-with-libs";
   version = "1.0.0";
@@ -12,8 +16,8 @@ stdenv.mkDerivation (finalAttrs: {
     hash = "sha256-mKSRUZBSVVX6qAdOOzwMRCMt10sqn+0WUdPROTy862I=";
   };
 
-  buildInputs = [ bc ];
-  nativeBuildInputs = [ makeWrapper ];
+  buildInputs = [bc];
+  nativeBuildInputs = [makeWrapper];
 
   unpackPhase = "true";
   installPhase = ''
@@ -22,6 +26,6 @@ stdenv.mkDerivation (finalAttrs: {
     chmod +x $out/bin/bc
 
     substituteInPlace $out/bin/bc --replace-fail %PREFIX% ${finalAttrs.libs}
-    wrapProgram $out/bin/bc --set PATH ${lib.makeBinPath [ bc ]}
+    wrapProgram $out/bin/bc --set PATH ${lib.makeBinPath [bc]}
   '';
 })

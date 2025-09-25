@@ -16,10 +16,10 @@
     }
   ];
 
-  networking.networkmanager.unmanaged = [ "interface-name:ve-*" ];
+  networking.networkmanager.unmanaged = ["interface-name:ve-*"];
   networking.nat = {
     enable = true;
-    internalInterfaces = [ "ve-+" ];
+    internalInterfaces = ["ve-+"];
     externalInterface = "eno1";
   };
 

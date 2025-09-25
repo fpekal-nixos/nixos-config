@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   services.phpfpm.pools.nginx = {
     user = "nginx";
     settings = {
@@ -33,38 +35,38 @@
         locations = {
           "/" = {
             extraConfig = ''
-              							add_header 'Cross-Origin-Embedder-Policy' 'require-corp';
-              							add_header 'Cross-Origin-Opener-Policy' 'same-origin';
-              							if ($request_method = 'GET') {
-              								add_header 'Access-Control-Allow-Origin' '*' always;
-              								add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
-              							}
-              						'';
+              add_header 'Cross-Origin-Embedder-Policy' 'require-corp';
+              add_header 'Cross-Origin-Opener-Policy' 'same-origin';
+              if ($request_method = 'GET') {
+              	add_header 'Access-Control-Allow-Origin' '*' always;
+              	add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
+              }
+            '';
           };
           "~ \\.php" = {
             index = "index.php";
             extraConfig = ''
-              						include ${config.services.nginx.package}/conf/fastcgi_params;
-              						autoindex off;
+              include ${config.services.nginx.package}/conf/fastcgi_params;
+              autoindex off;
 
-              						# regex to split $uri to $fastcgi_script_name and $fastcgi_path
-              						fastcgi_split_path_info ^(.+?\.php)(/.*)$;
+              # regex to split $uri to $fastcgi_script_name and $fastcgi_path
+              fastcgi_split_path_info ^(.+?\.php)(/.*)$;
 
-              						# Check that the PHP script exists before passing it
-              						# try_files $fastcgi_script_name =404;
+              # Check that the PHP script exists before passing it
+              # try_files $fastcgi_script_name =404;
 
-              						# Bypass the fact that try_files resets $fastcgi_path_info
-              						# see: http://trac.nginx.org/nginx/ticket/321
-              						set $path_info $fastcgi_path_info;
-              						fastcgi_param PATH_INFO $path_info;
+              # Bypass the fact that try_files resets $fastcgi_path_info
+              # see: http://trac.nginx.org/nginx/ticket/321
+              set $path_info $fastcgi_path_info;
+              fastcgi_param PATH_INFO $path_info;
 
-              						fastcgi_index index.php;
-              						fastcgi_param  SCRIPT_FILENAME    $document_root$fastcgi_script_name;
-              						include ${pkgs.nginx}/conf/fastcgi.conf;
+              fastcgi_index index.php;
+              fastcgi_param  SCRIPT_FILENAME    $document_root$fastcgi_script_name;
+              include ${pkgs.nginx}/conf/fastcgi.conf;
 
-              						fastcgi_pass unix:${config.services.phpfpm.pools.nginx.socket};
-              						fastcgi_param PHP_VALUE "upload_max_filesize=512M \n post_max_size=512M";
-              						'';
+              fastcgi_pass unix:${config.services.phpfpm.pools.nginx.socket};
+              fastcgi_param PHP_VALUE "upload_max_filesize=512M \n post_max_size=512M";
+            '';
           };
         };
       };
@@ -84,12 +86,12 @@
             proxyPass = "http://localhost:8102/";
 
             extraConfig = ''
-              						proxy_set_header Host $host;
-              						proxy_set_header X-Real-IP $remote_addr;
-              						proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-              						proxy_set_header X-Forwarded-Proto $scheme;
-              						fastcgi_param PHP_VALUE "upload_max_filesize=512M \n post_max_size=512M";
-              						'';
+              proxy_set_header Host $host;
+              proxy_set_header X-Real-IP $remote_addr;
+              proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+              proxy_set_header X-Forwarded-Proto $scheme;
+              fastcgi_param PHP_VALUE "upload_max_filesize=512M \n post_max_size=512M";
+            '';
           };
         };
       };
@@ -173,8 +175,8 @@
           "/" = {
             proxyPass = "http://localhost:8090/";
             extraConfig = ''
-                          proxy_set_header Host openproject.everest.stream; 
-              						'';
+              proxy_set_header Host openproject.everest.stream;
+            '';
           };
         };
       };
@@ -201,23 +203,23 @@
           "/" = {
             proxyPass = "http://localhost:8083";
             extraConfig = ''
-                          proxy_set_header Host $host; 
-                          proxy_set_header X-Real-IP $remote_addr; 
-                          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; 
-                          proxy_set_header X-Forwarded-Proto $scheme;
-              						'';
+              proxy_set_header Host $host;
+              proxy_set_header X-Real-IP $remote_addr;
+              proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+              proxy_set_header X-Forwarded-Proto $scheme;
+            '';
           };
 
           "/socket.io/" = {
             proxyPass = "http://localhost:8083";
             extraConfig = ''
-              						proxy_set_header Host $host; 
-              						proxy_set_header X-Real-IP $remote_addr; 
-              						proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; 
-              						proxy_set_header X-Forwarded-Proto $scheme;
-              						proxy_set_header Upgrade $http_upgrade;
-              						proxy_set_header Connection $connection_upgrade;
-              					'';
+              proxy_set_header Host $host;
+              proxy_set_header X-Real-IP $remote_addr;
+              proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+              proxy_set_header X-Forwarded-Proto $scheme;
+              proxy_set_header Upgrade $http_upgrade;
+              proxy_set_header Connection $connection_upgrade;
+            '';
           };
         };
       };

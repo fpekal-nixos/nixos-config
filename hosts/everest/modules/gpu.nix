@@ -1,5 +1,4 @@
-{ config, ... }:
-{
+{config, ...}: {
   hardware.graphics.enable = true;
   #hardware.opengl = {
 
@@ -9,7 +8,7 @@
   #	extraPackages = with pkgs; [ vaapiVdpau ];
   #};
 
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = ["nvidia"];
 
   hardware.nvidia = {
     powerManagement.enable = true;

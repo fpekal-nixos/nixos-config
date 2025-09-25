@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   services.libinput.touchpad.naturalScrolling = true;
   services.libinput.mouse.accelProfile = "flat";
 

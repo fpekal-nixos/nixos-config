@@ -1,10 +1,13 @@
-{ inputs, pkgs, ... }:
 {
+  inputs,
+  pkgs,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
     inputs.boomer.packages.x86_64-linux.boomer
     vesktop
-    (callPackage ../../../packages/spotify.nix { })
-    (callPackage ../../../packages/osu.nix { })
+    (callPackage ../../../packages/spotify.nix {})
+    (callPackage ../../../packages/osu.nix {})
   ];
 
   home-manager.users.filip.programs.boomer = {

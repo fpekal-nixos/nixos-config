@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     gcc
 
@@ -27,6 +26,6 @@
     sops
     ffmpeg_7-full
 
-    (pkgs.callPackage ../packages/bc-with-libs/default.nix { })
+    (pkgs.callPackage ../packages/bc-with-libs/default.nix {})
   ];
 }
