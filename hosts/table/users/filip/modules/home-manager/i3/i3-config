@@ -44,6 +44,10 @@ bindsym $mod+Control+equal exec --no-startup-id radiod up
 bindsym $mod+Control+Shift+minus exec --no-startup-id radiod toggle
 bindsym $mod+Control+Shift+equal exec --no-startup-id radiod next
 
+# Change default sink
+bindsym $mod+p exec --no-startup-id /home/filip/.config/i3/change-sink.sh
+bindsym $mod+shift+p exec --no-startup-id /home/filip/.config/i3/change-sink-raw.sh
+
 # Volume on 60% keyboard
 bindsym $mod+minus exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2% && $refresh_i3status
 bindsym $mod+equal exec --no-startup-id /home/filip/.config/i3/raise-volume.sh && $refresh_i3status

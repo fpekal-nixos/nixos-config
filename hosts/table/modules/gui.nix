@@ -27,6 +27,7 @@
         pkgs.xss-lock
         pkgs.networkmanagerapplet
         pkgs.i3blocks
+        pkgs.rofi
       ];
     };
 
