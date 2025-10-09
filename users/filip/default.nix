@@ -2,6 +2,7 @@
   imports = [
     ./authorized-keys
     ./home-manager
+    ./blesh.nix
   ];
 
   users.users.filip = {

@@ -1,4 +1,8 @@
 {
+  imports = [
+    ./atuin.nix
+  ];
+
   home-manager.users.filip = {
     home.stateVersion = "25.05";
 
