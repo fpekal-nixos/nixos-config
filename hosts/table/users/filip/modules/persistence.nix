@@ -3,6 +3,8 @@
     users.filip = {
       directories = [
         ".config/vesktop"
+        ".config/spotify"
+        ".local/share/atuin"
         ".local/state/nvim"
         ".local/share/nvim"
         ".local/share/zoxide"
