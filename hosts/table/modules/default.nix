@@ -15,5 +15,6 @@
     ./ssh.nix
     ./hosts.nix
     ./docker.nix
+    ./obs.nix
   ];
 }

@@ -3,5 +3,6 @@
     ./wallpapers
     ./i3
     ./syncthing.nix
+    ./niri
   ];
 }

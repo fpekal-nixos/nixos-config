@@ -6,7 +6,7 @@
   environment.systemPackages = with pkgs; [
     inputs.boomer.packages.x86_64-linux.boomer
     vesktop
-    (callPackage ../../../packages/spotify.nix {})
+    # (callPackage ../../../packages/spotify.nix {})
     (callPackage ../../../packages/osu.nix {})
   ];
 

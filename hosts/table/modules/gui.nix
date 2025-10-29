@@ -6,7 +6,30 @@
     enable = true;
   };
 
-  services.displayManager.defaultSession = "none+i3";
+  services.displayManager.defaultSession = "niri";
+  #   services.xserver.displayManager.session = [
+  #     {
+  #       manage = "window";
+  #       name = "mango";
+  #       start = ''
+  #         exec mango
+  #       '';
+  #     }
+  #   ];
+
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+    wlr.enable = true;
+  };
+
+  programs.niri.enable = true;
+  programs.xwayland.enable = true;
+
+  services.displayManager.gdm = {
+    enable = true;
+    wayland = true;
+  };
 
   services.xserver = {
     enable = true;
@@ -31,15 +54,15 @@
       ];
     };
 
-    displayManager.lightdm = {
-      enable = true;
-      greeters.slick = {
-        enable = true;
-        # extraConfig = ''
-        #         background=/var/lock_screen/lock_screen.png
-        # '';
-      };
-    };
+    # displayManager.lightdm = {
+    #   enable = true;
+    #   greeters.slick = {
+    #     enable = true;
+    #     # extraConfig = ''
+    #     #         background=/var/lock_screen/lock_screen.png
+    #     # '';
+    #   };
+    # };
   };
 
   services.pipewire = {
@@ -51,6 +74,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    xwayland-satellite
     pulseaudio
     light
     xclip

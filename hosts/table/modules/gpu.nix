@@ -17,6 +17,7 @@
         intelBusId = "PCI:0:2:0";
         nvidiaBusId = "PCI:1:0:0";
         sync.enable = true;
+        # reverseSync.enable = true;
         offload = {
           enable = false;
           enableOffloadCmd = false;
@@ -31,9 +32,9 @@
       modesetting.enable = true;
       nvidiaSettings = true;
 
-      open = false;
-      package = config.boot.kernelPackages.nvidiaPackages.production;
-      # package = config.boot.kernelPackages.nvidiaPackages.beta;
+      open = true;
+      # package = config.boot.kernelPackages.nvidiaPackages.production;
+      package = config.boot.kernelPackages.nvidiaPackages.beta;
     };
 
     #environment.systemPackages = [

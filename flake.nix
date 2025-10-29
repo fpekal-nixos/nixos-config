@@ -1,12 +1,12 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     nixosBlankSystem.url = "github:fpekal-nixos/nixos-template";
     nixosBlankSystem.inputs.nixpkgs.follows = "nixpkgs";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     sops-nix = {
@@ -25,6 +25,9 @@
 
     fairfax-nerdfont.url = "github:fpekal-nixos/FairfaxNerdfont";
     fairfax-nerdfont.inputs.nixpkgs.follows = "nixpkgs";
+
+    mango.url = "github:DreamMaoMao/mango";
+    mango.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
