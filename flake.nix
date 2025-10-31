@@ -28,6 +28,11 @@
 
     mango.url = "github:DreamMaoMao/mango";
     mango.inputs.nixpkgs.follows = "nixpkgs";
+
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -36,6 +41,7 @@
     home-manager,
     sops-nix,
     impurity,
+    nur,
     ...
   } @ inputs: {
     systems.generic = nixosBlankSystem.systems.minimal.extend {
@@ -43,6 +49,7 @@
         ./default.nix
         home-manager.nixosModules.home-manager
         sops-nix.nixosModules.sops
+        nur.modules.nixos.default
 
         {imports = [impurity.nixosModules.impurity];}
       ];

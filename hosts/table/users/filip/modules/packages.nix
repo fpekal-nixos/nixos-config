@@ -7,6 +7,7 @@
     inputs.boomer.packages.x86_64-linux.boomer
     vesktop
     # (callPackage ../../../packages/spotify.nix {})
+    pkgs.nur.repos.nltch.spotify-adblock
     (callPackage ../../../packages/osu.nix {})
   ];
 
