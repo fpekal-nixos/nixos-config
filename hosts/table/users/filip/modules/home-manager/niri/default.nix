@@ -18,5 +18,6 @@
   environment.systemPackages = [
     pkgs.fuzzel
     pkgs.swaylock
+    pkgs.swaybg
   ];
 }
