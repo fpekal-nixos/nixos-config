@@ -38,6 +38,8 @@
       libpng
       libjpeg
       libjpeg8
+      libusb1
+      e2fsprogs
     ];
   };
 }
