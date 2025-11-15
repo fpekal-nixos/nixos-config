@@ -16,5 +16,6 @@
     ./hosts.nix
     ./docker.nix
     ./obs.nix
+    ./sunshine.nix
   ];
 }

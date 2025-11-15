@@ -11,5 +11,6 @@
     ./radiod
     ./obsidian.nix
     ./printing.nix
+    ./sunshine.nix
   ];
 }
