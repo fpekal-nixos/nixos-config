@@ -392,6 +392,11 @@ binds {
     // shows a list of important hotkeys.
     Mod+Shift+Slash { show-hotkey-overlay; }
 
+    // Set stream target
+    Mod+XF86Tools { spawn-sh "niri msg action set-dynamic-cast-window --id $(niri msg --json pick-window | jq .id)"; }
+    Mod+Shift+XF86Tools { set-dynamic-cast-monitor; }
+    
+    
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T hotkey-overlay-title="Open a Terminal" { spawn "tilix"; }
     Mod+Return hotkey-overlay-title="Open a Terminal" { spawn "tilix"; }

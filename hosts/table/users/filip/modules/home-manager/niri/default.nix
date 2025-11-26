@@ -19,5 +19,6 @@
     pkgs.fuzzel
     pkgs.swaylock
     pkgs.swaybg
+    pkgs.jq
   ];
 }
