@@ -12,6 +12,7 @@
         ".ssh"
         "Games"
         ".local/share/osu"
+        "data"
       ];
 
       files = [

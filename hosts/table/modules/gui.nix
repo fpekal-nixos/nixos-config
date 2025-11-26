@@ -74,6 +74,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    nautilus
     xwayland-satellite
     pulseaudio
     light

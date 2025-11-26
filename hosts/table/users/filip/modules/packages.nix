@@ -9,6 +9,7 @@
     # (callPackage ../../../packages/spotify.nix {})
     pkgs.nur.repos.nltch.spotify-adblock
     (callPackage ../../../packages/osu.nix {})
+    pkgs.doublecmd
   ];
 
   home-manager.users.filip.programs.boomer = {
