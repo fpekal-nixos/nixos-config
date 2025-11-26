@@ -21,6 +21,7 @@
       "/var/lib/tailscale"
       "/var/db/sudo/lectured"
       "/etc/NetworkManager/system-connections"
+      "/var/lib/postgresql/"
     ];
     files = [
       "/etc/machine-id"

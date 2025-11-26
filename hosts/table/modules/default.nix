@@ -17,5 +17,6 @@
     ./docker.nix
     ./obs.nix
     ./sunshine.nix
+    ./sql.nix
   ];
 }
