@@ -13,4 +13,10 @@
     ./printing.nix
     ./sunshine.nix
   ];
+
+  users.users.filip = {
+    extraGroups = [
+      "docker"
+    ];
+  };
 }
