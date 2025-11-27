@@ -21,6 +21,9 @@
     enable = true;
     xdgOpenUsePortal = true;
     wlr.enable = true;
+    extraPortals = [
+      pkgs.kdePackages.xdg-desktop-portal-kde
+    ];
   };
 
   programs.niri.enable = true;
