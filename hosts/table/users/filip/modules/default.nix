@@ -12,6 +12,7 @@
     ./obsidian.nix
     ./printing.nix
     ./sunshine.nix
+    ./pio.nix
   ];
 
   users.users.filip = {
