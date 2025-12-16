@@ -14,5 +14,10 @@
 
   boot.kernelParams = [
     "pcie_aspm=off"
+    "hibernate.compressor=lzo"
   ];
+
+  zramSwap = {
+    enable = true;
+  };
 }
