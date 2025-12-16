@@ -95,9 +95,9 @@
     };
   };
 
-  services.picom = {
-    enable = true;
-  };
+  # services.picom = {
+  #   enable = true;
+  # };
 
   programs.dconf.profiles = {
     user.databases = [
