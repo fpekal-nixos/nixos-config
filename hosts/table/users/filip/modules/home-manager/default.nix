@@ -4,5 +4,6 @@
     ./i3
     ./syncthing.nix
     ./niri
+    ./noctalia
   ];
 }

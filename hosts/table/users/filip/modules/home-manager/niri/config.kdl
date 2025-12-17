@@ -176,13 +176,13 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#7fc8ff"
+        active-color "#9c3022"
 
         // Color of the ring on inactive monitors.
         //
         // The focus ring only draws around the active window, so the only place
         // where you can see its inactive-color is on other monitors.
-        inactive-color "#505050"
+        inactive-color "#542b19"
 
         // You can also use gradients. They take precedence over solid colors.
         // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
@@ -279,6 +279,8 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
 
+spawn-at-startup "radiod" "daemon"
+
 spawn-at-startup "swaybg" "--image" "/home/filip/.wallpapers/chiaki.png"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
@@ -362,25 +364,34 @@ window-rule {
     match is-window-cast-target=true
 
     focus-ring {
-        active-color "#f38ba8"
-        inactive-color "#7d0d2d"
+			  width 2
+        active-color "#ff0000"
+        inactive-color "#7d0d1d"
     }
 
     border {
-        inactive-color "#7d0d2d"
+			  active-color "#ff0000"
+        inactive-color "#5e0000"
     }
 
     shadow {
-        color "#7d0d2d70"
+			  on
+        color "#7f2000e0"
     }
 
     tab-indicator {
-        active-color "#f38ba8"
-        inactive-color "#7d0d2d"
+        active-color "#ff0000"
     }
 }
 
 binds {
+	  // Radiod
+	  Mod+Shift+Ctrl+Equal allow-when-locked=true { spawn "radiod" "up"; }
+	  Mod+Shift+Ctrl+Minus allow-when-locked=true { spawn "radiod" "down"; }
+	  Mod+Shift+Ctrl+BracketLeft allow-when-locked=true { spawn "radiod" "toggle"; }
+	  Mod+Shift+Ctrl+BracketRight allow-when-locked=true { spawn "radiod" "next"; }
+
+	
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
     // in the end. To find an XKB name for a particular key, you may use a program
     // like wev.
@@ -421,6 +432,11 @@ binds {
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-"; }
     XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+
+	  Mod+Ctrl+Equal allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+ -l 1"; }
+	  Mod+Ctrl+Minus allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-"; }
+		Mod+Ctrl+BracketLeft allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+		// Mod+Ctrl+BracketRight allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
 
     // Example brightness key mappings for brightnessctl.
     // You can use regular spawn with multiple arguments too (to avoid going through "sh"),
