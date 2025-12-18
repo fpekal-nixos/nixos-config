@@ -19,7 +19,11 @@
       bash.enable = true;
 
       # Prompt
-      bash.initExtra = builtins.readFile ./PS1.sh;
+      bash.initExtra = ''
+        . "$HOME/.profile"
+
+        ${builtins.readFile ./PS1.sh}
+      '';
     };
   };
 }
