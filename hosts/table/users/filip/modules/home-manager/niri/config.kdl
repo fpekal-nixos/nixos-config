@@ -176,13 +176,13 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#9c3022"
+        // active-color "#9c3022"
 
         // Color of the ring on inactive monitors.
         //
         // The focus ring only draws around the active window, so the only place
         // where you can see its inactive-color is on other monitors.
-        inactive-color "#542b19"
+        // inactive-color "#542b19"
 
         // You can also use gradients. They take precedence over solid colors.
         // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
@@ -207,11 +207,11 @@ layout {
         off
 
         width 4
-        active-color "#ffc87f"
-        inactive-color "#505050"
+        // active-color "#ffc87f"
+        // inactive-color "#505050"
 
         // Color of the border around windows that request your attention.
-        urgent-color "#9b0000"
+        // urgent-color "#9b0000"
 
         // Gradients can use a few different interpolation color spaces.
         // For example, this is a pastel rainbow gradient via in="oklch longer hue".
@@ -255,7 +255,7 @@ layout {
         offset x=0 y=5
 
         // You can also change the shadow color and opacity.
-        color "#0007"
+        // color "#0007"
     }
 
     // Struts shrink the area occupied by windows, similarly to layer-shell panels.
@@ -686,3 +686,5 @@ debug {
 	// Allows notification actions and window activation from Noctalia.
   honor-xdg-activation-with-invalid-serial
 }
+
+include "/home/filip/.config/niri/noctalia.kdl"

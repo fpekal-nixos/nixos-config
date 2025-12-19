@@ -1,10 +1,21 @@
-{inputs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   environment.persistence."/persistent" = {
     users.filip = {
       directories = [
         ".cache/noctalia"
       ];
+      files = [
+        ".config/noctalia/colors.json"
+      ];
     };
+  };
+
+  services.upower = {
+    enable = true;
   };
 
   home-manager.users.filip = {

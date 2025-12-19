@@ -467,7 +467,7 @@
     alacritty = false;
     cava = false;
     code = false;
-    discord = false;
+    discord = true;
     emacs = false;
     enableUserTemplates = false;
     foot = false;
@@ -476,7 +476,7 @@
     gtk = false;
     kcolorscheme = false;
     kitty = false;
-    niri = false;
+    niri = true;
     pywalfox = false;
     qt = false;
     spicetify = false;

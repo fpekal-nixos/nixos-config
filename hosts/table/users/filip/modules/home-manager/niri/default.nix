@@ -1,4 +1,12 @@
 {pkgs, ...}: {
+  environment.persistence."/persistent" = {
+    users.filip = {
+      files = [
+        ".config/niri/noctalia.kdl"
+      ];
+    };
+  };
+
   home-manager.users.filip = {
     home.file = {
       ".config/niri/config.kdl".source = ./config.kdl;
