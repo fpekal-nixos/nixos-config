@@ -280,7 +280,7 @@ layout {
 spawn-at-startup "waybar"
 
 spawn-at-startup "radiod" "daemon"
-spawn-at-startup "noctalia-shell"
+spawn-sh-at-startup "NOCTALIA_SETTINGS_FALLBACK=%h/.config/noctalia/gui-settings.json noctalia-shell"
 
 spawn-at-startup "swaybg" "--image" "/home/filip/.wallpapers/chiaki.png"
 
