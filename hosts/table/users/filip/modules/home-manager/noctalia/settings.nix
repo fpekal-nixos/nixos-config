@@ -469,7 +469,7 @@
     code = false;
     discord = true;
     emacs = false;
-    enableUserTemplates = false;
+    enableUserTemplates = true;
     foot = false;
     fuzzel = true;
     ghostty = false;
