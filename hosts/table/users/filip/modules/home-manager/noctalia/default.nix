@@ -44,7 +44,7 @@
               text = ''
                 sqlite3 ~/.zen/11sz08bn.Default\ Profile/places.sqlite \
                   "UPDATE zen_workspaces SET theme_colors = '$(cat ~/.config/noctalia/templates/zen-generated.json)' WHERE name = 'Default';"
-                '';
+              '';
             }}/bin/zen-hook";
           };
         };
