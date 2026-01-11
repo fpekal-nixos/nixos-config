@@ -2,6 +2,8 @@
   environment.systemPackages = with pkgs; [
     fd
     ripgrep
+    statix
+    nodejs
   ];
 
   programs.neovim = {
