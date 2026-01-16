@@ -34,6 +34,24 @@
     wayland = true;
   };
 
+  programs.foot = {
+    enable = true;
+    enableBashIntegration = true;
+
+    settings = {
+      main = {
+        font = "FairfaxHax Nerd Font:size=18";
+        resize-by-cells = "yes";
+        resize-keep-grid = "no";
+      };
+
+      colors = {
+        alpha = 0.8;
+        alpha-mode = "matching";
+      };
+    };
+  };
+
   services.xserver = {
     enable = true;
     enableTCP = true;
@@ -42,7 +60,7 @@
       enable = true;
 
       extraPackages = [
-        pkgs.tilix
+        pkgs.foot
         pkgs.i3lock
         pkgs.i3status
         pkgs.dmenu

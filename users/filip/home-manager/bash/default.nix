@@ -23,6 +23,8 @@
         . "$HOME/.profile"
 
         ${builtins.readFile ./PS1.sh}
+
+        TERM=xterm
       '';
     };
   };
