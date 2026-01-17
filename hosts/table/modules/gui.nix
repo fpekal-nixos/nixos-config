@@ -46,7 +46,8 @@
       };
 
       colors = {
-        alpha = 0.8;
+        background = "282828";
+        alpha = 0.9;
         alpha-mode = "matching";
       };
     };
