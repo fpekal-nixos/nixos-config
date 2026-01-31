@@ -33,6 +33,11 @@
     ]; # The UID of filip
   };
 
+  fileSystems."/mnt/ssd" = {
+    device = "/dev/disk/by-uuid/68cd1971-6a24-43c7-806f-8a02a47707c1";
+    fsType = "btrfs";
+  };
+
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/68cd1971-6a24-43c7-806f-8a02a47707c1";
     fsType = "btrfs";
