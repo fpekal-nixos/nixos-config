@@ -1,3 +1,5 @@
+include "dynamic-transparency.kdl"
+
 // This config is in the KDL format: https://kdl.dev
 // "/-" comments out the following node.
 // Check the wiki for a full description of the configuration:
@@ -332,10 +334,10 @@ window-rule {
     default-column-width {}
 }
 
-window-rule {
-  match is-floating=true is-focused=false
-  opacity 0.3
-}
+// window-rule {
+//   match is-floating=true is-focused=false
+//   opacity 0.3
+// }
 
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
@@ -428,8 +430,8 @@ binds {
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Super+Ctrl+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
 
-		Super+P hotkey-overlay-title="Choose default sink" { spawn "/home/filip/.config/niri/change-sink.sh"; }
-		Super+Ctrl+P hotkey-overlay-title="Choose default sink" { spawn "/home/filip/.config/niri/change-sink-raw.sh"; }
+    Super+P hotkey-overlay-title="Choose default sink" { spawn "/home/filip/.config/niri/change-sink.sh"; }
+    Super+Ctrl+P hotkey-overlay-title="Choose default sink" { spawn "/home/filip/.config/niri/change-sink-raw.sh"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
@@ -685,6 +687,9 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
+
+    Mod+N { spawn "/home/filip/.config/niri/change-transparency.sh" "less"; }
+    Mod+B { spawn "/home/filip/.config/niri/change-transparency.sh" "more"; }
 }
 
 debug {
