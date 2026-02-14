@@ -695,6 +695,7 @@ binds {
 debug {
 	// Allows notification actions and window activation from Noctalia.
   honor-xdg-activation-with-invalid-serial
+  wait-for-frame-completion-before-queueing
 }
 
 include "/home/filip/.config/niri/noctalia.kdl"
