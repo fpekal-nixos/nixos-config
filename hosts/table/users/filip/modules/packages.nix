@@ -10,6 +10,7 @@
     pkgs.nur.repos.nltch.spotify-adblock
     (callPackage ../../../packages/osu.nix {})
     pkgs.doublecmd
+    pkgs.wl-clipboard
   ];
 
   home-manager.users.filip.programs.boomer = {
