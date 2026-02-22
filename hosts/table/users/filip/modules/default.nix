@@ -6,13 +6,12 @@
     ./persistence.nix
     ./steam.nix
     ./packages.nix
-    ./zellij.nix
-    ./radioboat
     ./radiod
     ./obsidian.nix
     ./printing.nix
     ./sunshine.nix
     ./pio.nix
+    ./ssh.nix
   ];
 
   users.users.filip = {

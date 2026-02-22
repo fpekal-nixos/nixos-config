@@ -24,4 +24,10 @@ in {
     after = ["network-online.target"];
     wants = ["network-online.target"];
   };
+
+  environment.persistence."/persistent" = {
+    directories = [
+      "/var/lib/tailscale"
+    ];
+  };
 }

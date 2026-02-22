@@ -5,5 +5,6 @@
     ./syncthing.nix
     ./niri
     ./noctalia
+    ./zellij.nix
   ];
 }
