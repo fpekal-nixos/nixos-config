@@ -2,7 +2,7 @@
   imports = [
     ./home-manager
     ./minecraft.nix
-    ./light.nix
+    ./keyboard.nix
     ./persistence.nix
     ./steam.nix
     ./packages.nix

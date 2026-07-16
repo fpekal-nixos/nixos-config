@@ -34,7 +34,7 @@
 
       open = true;
       # package = config.boot.kernelPackages.nvidiaPackages.production;
-      package = config.boot.kernelPackages.nvidiaPackages.beta;
+      package = config.boot.kernelPackages.nvidiaPackages.latest;
     };
 
     #environment.systemPackages = [

@@ -282,7 +282,7 @@ layout {
 spawn-at-startup "waybar"
 
 spawn-at-startup "radiod" "daemon"
-spawn-sh-at-startup "NOCTALIA_SETTINGS_FALLBACK=%h/.config/noctalia/gui-settings.json noctalia-shell"
+spawn-sh-at-startup "NOCTALIA_SETTINGS_FALLBACK=%h/.config/noctalia/gui-settings.json noctalia"
 
 spawn-at-startup "swaybg" "--image" "/home/filip/.wallpapers/chiaki.png"
 
@@ -428,7 +428,7 @@ binds {
     Mod+T hotkey-overlay-title="Open a Terminal" { spawn "foot"; }
     Mod+Return hotkey-overlay-title="Open a Terminal" { spawn "foot"; }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Super+Ctrl+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
+    Super+Ctrl+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "noctalia" "ipc" "call" "lockScreen" "lock"; }
 
     Super+P hotkey-overlay-title="Choose default sink" { spawn "/home/filip/.config/niri/change-sink.sh"; }
     Super+Ctrl+P hotkey-overlay-title="Choose default sink" { spawn "/home/filip/.config/niri/change-sink-raw.sh"; }
@@ -445,12 +445,12 @@ binds {
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-"; }
     XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
-		XF86AudioPlay        allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "media" "playPause"; }
+		XF86AudioPlay        allow-when-locked=true { spawn "noctalia" "ipc" "call" "media" "playPause"; }
 
 	  Mod+Ctrl+Equal allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+ -l 1"; }
 	  Mod+Ctrl+Minus allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-"; }
 		Mod+Ctrl+BracketLeft allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
-		Mod+Ctrl+BracketRight allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "media" "playPause"; }
+		Mod+Ctrl+BracketRight allow-when-locked=true { spawn "noctalia" "ipc" "call" "media" "playPause"; }
 
     // Example brightness key mappings for brightnessctl.
     // You can use regular spawn with multiple arguments too (to avoid going through "sh"),

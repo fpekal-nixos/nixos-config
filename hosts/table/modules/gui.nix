@@ -31,7 +31,6 @@
 
   services.displayManager.gdm = {
     enable = true;
-    wayland = true;
   };
 
   programs.foot = {
@@ -99,7 +98,7 @@
     nautilus
     xwayland-satellite
     pulseaudio
-    light
+    brightnessctl
     xclip
   ];
 
@@ -127,6 +126,4 @@
       }
     ];
   };
-
-  programs.light.enable = true;
 }
