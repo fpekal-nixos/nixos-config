@@ -1,6 +1,9 @@
 {
   inputs = {
+    self.submodules = true;
+
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
     nixosBlankSystem.url = "github:fpekal-nixos/nixos-template";
     nixosBlankSystem.inputs.nixpkgs.follows = "nixpkgs";
