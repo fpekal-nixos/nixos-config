@@ -441,22 +441,23 @@ binds {
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
     // Using spawn-sh allows to pass multiple arguments together with the command.
-    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+ -l 1"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-"; }
-    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
-		XF86AudioPlay        allow-when-locked=true { spawn "noctalia" "ipc" "call" "media" "playPause"; }
+	    XF86AudioRaiseVolume allow-when-locked=true { spawn "noctalia" "msg" "volume-up"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "noctalia" "msg" "volume-down"; }
+    XF86AudioMute        allow-when-locked=true { spawn "noctalia" "msg" "volume-mute"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn "noctalia" "msg" "mic-mute"; }
+		XF86AudioPlay        allow-when-locked=true { spawn "noctalia" "msg" "media" "toggle"; }
 
-	  Mod+Ctrl+Equal allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+ -l 1"; }
-	  Mod+Ctrl+Minus allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-"; }
-		Mod+Ctrl+BracketLeft allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
-		Mod+Ctrl+BracketRight allow-when-locked=true { spawn "noctalia" "ipc" "call" "media" "playPause"; }
+	  Mod+Ctrl+Equal allow-when-locked=true { spawn "noctalia" "msg" "volume-up"; }
+	  Mod+Ctrl+Minus allow-when-locked=true { spawn "noctalia" "msg" "volume-down"; }
+		Mod+Ctrl+BracketLeft allow-when-locked=true { spawn "noctalia" "msg" "volume-mute"; }
+		Mod+Ctrl+BracketRight allow-when-locked=true { spawn "noctalia" "msg" "media" "toggle"; }
 
     // Example brightness key mappings for brightnessctl.
     // You can use regular spawn with multiple arguments too (to avoid going through "sh"),
     // but you need to manually put each argument in separate "" quotes.
-    XF86MonBrightnessUp allow-when-locked=true { spawn "light" "-A" "2"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "light" "-U" "2"; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn "noctalia" "msg" "brightness-up"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "noctalia" "msg" "brightness-down"; }
+
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
