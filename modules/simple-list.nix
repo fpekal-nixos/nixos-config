@@ -26,6 +26,7 @@
     sops
     ffmpeg_7-full
     cargo
+    nh
 
     (pkgs.callPackage ../packages/bc-with-libs/default.nix {})
   ];

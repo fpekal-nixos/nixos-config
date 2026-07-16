@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   environment.systemPackages = [
     pkgs.prismlauncher
+    pkgs.openjdk25
   ];
 
   environment.persistence."/persistent" = {

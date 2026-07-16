@@ -4,12 +4,12 @@
       directories = [
         ".config/vesktop"
         ".config/spotify"
+        ".config/heroic"
         ".local/share/atuin"
         ".local/state/nvim"
         ".local/share/nvim"
         ".local/share/zoxide"
         ".zen"
-        ".ssh"
         "Games"
         ".local/share/osu"
         "data"

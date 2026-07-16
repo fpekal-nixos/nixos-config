@@ -11,6 +11,8 @@
     (callPackage ../../../packages/osu.nix {})
     pkgs.doublecmd
     pkgs.wl-clipboard
+    pkgs.godot
+    pkgs.gamescope
   ];
 
   home-manager.users.filip.programs.boomer = {

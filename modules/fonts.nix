@@ -7,6 +7,6 @@
     pkgs.nerd-fonts.gohufont
     pkgs.cozette
     pkgs.linja-sike
-    inputs.fairfax-nerdfont.packages.x86_64-linux.default
+    pkgs.nerd-fonts.departure-mono
   ];
 }

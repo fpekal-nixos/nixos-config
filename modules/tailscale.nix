@@ -13,6 +13,8 @@ in {
     authKeyFile = keyFile;
     openFirewall = true;
 
+    useRoutingFeatures = "client";
+
     extraUpFlags = [
       "--advertise-tags=tag:table"
     ];
