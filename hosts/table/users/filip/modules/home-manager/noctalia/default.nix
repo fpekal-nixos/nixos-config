@@ -32,5 +32,13 @@
       settings = import ./settings.nix;
       package = inputs.noctalia.packages.x86_64-linux.cuda;
     };
+
+    home.file.".config/foot/foot.ini" = {
+      text = ''
+        [main]
+        include=~/.config/foot/themes/noctalia
+        include=/etc/xdg/foot/foot.ini
+      '';
+    };
   };
 }

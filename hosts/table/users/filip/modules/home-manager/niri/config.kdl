@@ -349,7 +349,7 @@ window-rule {
 }
 
 layer-rule {
-  match namespace="^noctalia-overview*"
+  match namespace="^noctalia-backdrop"
   place-within-backdrop true
 }
 
@@ -428,7 +428,7 @@ binds {
     Mod+T hotkey-overlay-title="Open a Terminal" { spawn "foot"; }
     Mod+Return hotkey-overlay-title="Open a Terminal" { spawn "foot"; }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Super+Ctrl+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "noctalia" "ipc" "call" "lockScreen" "lock"; }
+    Super+Ctrl+L hotkey-overlay-title="Lock the Screen" { spawn "noctalia" "msg" "session" "lock"; }
 
     Super+P hotkey-overlay-title="Choose default sink" { spawn "/home/filip/.config/niri/change-sink.sh"; }
     Super+Ctrl+P hotkey-overlay-title="Choose default sink" { spawn "/home/filip/.config/niri/change-sink-raw.sh"; }

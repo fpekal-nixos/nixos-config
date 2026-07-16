@@ -39,13 +39,13 @@
 
     settings = {
       main = {
-        font = "FairfaxHax Nerd Font:size=18";
+        font = "DepartureMono Nerd Font:size=14";
         resize-by-cells = "yes";
         resize-keep-grid = "no";
       };
 
-      colors = {
-        background = "282828";
+      colors-dark = {
+        # background = "282828";
         alpha = 0.9;
         alpha-mode = "matching";
       };
