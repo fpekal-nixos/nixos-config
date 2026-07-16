@@ -6,5 +6,6 @@
     ./niri
     ./noctalia
     ./zellij.nix
+    ./opencode.nix
   ];
 }
