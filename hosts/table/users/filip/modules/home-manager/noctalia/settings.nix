@@ -54,12 +54,17 @@
         output = "eDP-1";
         rotation = 0.0;
         type = "media_player";
+
+        settings = {
+          hide_when_no_media = true;
+        };
       };
 
       "lockscreen-widget-0000000000000002" = {
         box_height = 368.0;
         box_width = 1840.0;
         cx = 960.0;
+        cy = -5.0;
         rotation = 0.0;
         type = "audio_visualizer";
 
